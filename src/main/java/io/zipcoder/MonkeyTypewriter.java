@@ -23,7 +23,11 @@ public class MonkeyTypewriter {
         // Do all of the Monkey / Thread building here
         // For each Copier(one safe and one unsafe), create and start 5 monkeys copying the introduction to
         // A Tale Of Two Cities.
-
+        Thread thread = new Thread(new UnsafeCopier(introduction));
+        Thread thread2 = new Thread(new UnsafeCopier(introduction));
+        Thread thread3 = new Thread(new UnsafeCopier(introduction));
+        Thread thread4 = new Thread(new UnsafeCopier(introduction));
+        Thread thread5 = new Thread(new UnsafeCopier(introduction));
 
         // This wait is here because main is still a thread and we want the main method to print the finished copies
         // after enough time has passed.
